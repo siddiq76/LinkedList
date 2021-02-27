@@ -9,16 +9,12 @@ public class LinkedList{
 		head = null;
 	}
 	
-	/**
-	 * @return the size
-	 */
+	
 	public int getSize() {
 		return size;
 	}
 
-	/**
-	 * @param size the size to set
-	 */
+	
 	public void setSize(int size) {
 		this.size = size;
 	}
@@ -30,18 +26,12 @@ public class LinkedList{
 		return head;
 	}
 
-	/**
-	 * @param head the head to set
-	 */
+	
 	public void setHead(Node head) {
 		this.head = head;
 	}
 
-	/**
-	 * @author Shubham, class defining an element of Linked List
-	 *
-	 * @param <T>, generic data type that the linked list stores
-	 */
+	
 	static class Node<T>{
 		private T data;
 		private Node next;
@@ -53,9 +43,7 @@ public class LinkedList{
 			return data;
 		}
 
-		/**
-		 * @param data the data to set
-		 */
+		
 		public void setData(T data) {
 			this.data = data;
 		}
@@ -67,9 +55,7 @@ public class LinkedList{
 			return next;
 		}
 
-		/**
-		 * @param next the next to set
-		 */
+		
 		public void setNext(Node next) {
 			this.next = next;
 		}
