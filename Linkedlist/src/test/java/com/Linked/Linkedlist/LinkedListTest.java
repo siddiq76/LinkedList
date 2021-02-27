@@ -1,6 +1,7 @@
 package com.Linked.Linkedlist;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -120,5 +121,50 @@ public class LinkedListTest
     	linkedList.popLast();
         assertEquals(2, linkedList.getSize());
         assertNotEquals(30, linkedList.returnFirst());
+    }
+    @Test
+    public void searchNodeTest_Correct(){
+    	linkedList.addNodeAtLast(56);
+    	linkedList.addNodeAtLast(70);
+//    	for adding element in between index taken as 1
+    	linkedList.addNodeAtIndex(30,1);
+    	linkedList.popLast();
+        assertEquals(2, linkedList.getSize());
+        assertTrue("The value is not present in list", linkedList.search(30));
+    }
+    
+    @Test
+    public void searchNodeTest_InCorrect(){
+    	linkedList.addNodeAtLast(56);
+    	linkedList.addNodeAtLast(70);
+//    	for adding element in between index taken as 1
+    	linkedList.addNodeAtIndex(30,1);
+    	linkedList.popLast();
+        assertEquals(2, linkedList.getSize());
+        assertFalse("The value is present inside list", linkedList.search(70));
+    }
+    
+    @Test
+    public void addNodeAfterTest_Correct(){
+    	linkedList.addNodeAtLast(56);
+    	linkedList.addNodeAtLast(70);
+//    	for adding element in between index taken as 1
+    	linkedList.addNodeAtIndex(30,1);
+    	linkedList.addNodeAfter(40, 30);
+    	linkedList.popLast();
+        assertEquals(3, linkedList.getSize());
+        assertEquals(56, linkedList.returnFirst());
+    }
+    
+    @Test
+    public void addNodeAfterTest_InCorrect(){
+    	linkedList.addNodeAtLast(56);
+    	linkedList.addNodeAtLast(70);
+//    	for adding element in between index taken as 1
+    	linkedList.addNodeAtIndex(30,1);
+    	linkedList.addNodeAfter(40, 30);
+    	linkedList.popLast();
+        assertEquals(3, linkedList.getSize());
+        assertNotEquals(40, linkedList.returnFirst());
     }
 }

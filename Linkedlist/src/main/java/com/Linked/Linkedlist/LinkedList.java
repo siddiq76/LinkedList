@@ -186,7 +186,33 @@ public class LinkedList{
 		}
 	}
 
-	public void addNodeAtIndex(int i, int val) {
+	public <T> boolean search(T data) {
+		Node n = head;
+		while( n != null) {
+			if(n.data == data)
+				return true;
+			n = n.next;
+		}
+		return false;
+	}
+	
+	
+	public <T> void addNodeAfter(T toPut,T present) {
+		Node t = head;
+		while( t != null) {
+			if(t.data == present) {
+				Node n = new Node(toPut);
+				n.next = t.next;
+				t.next = n;
+				size++;
+				return;
+			}
+			t = t.next;
+		}
+		System.out.println("No node with data: " + present + " exists.");
+	}
+
+	public void addNodeAtIndex(int i, int j) {
 		// TODO Auto-generated method stub
 		
 	}
