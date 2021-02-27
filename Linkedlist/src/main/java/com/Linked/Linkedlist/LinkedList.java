@@ -167,9 +167,46 @@ public class LinkedList{
 			size--;
 		}
 	}
+	/**
+	 * deletes the last node of the linked list
+	 */
+	public <T> void popLast() {
+		if(head==null) {
+			System.out.println("The list is empty, no elements to remove");
+		}
+		else if(size == 1) {
+			head = null;
+			size--;
+		}
+		else {
+			Node t = head, prev = null;
+			while(t.next != null) {
+				prev = t;
+				t = t.next;
+			}
+			prev.next = null;
+			size--;
+		}
+	}
+	
+	/**
+	 * @param data,the data which is searched for inside linked list
+	 * @return, returns true if data present in linked list, else returns false
+	 */
+	public <T> boolean search(T data) {
+		Node n = head;
+		while( n != null) {
+			if(n.data == data)
+				return true;
+			n = n.next;
+		}
+		return false;
+	}
 
 	public void addNodeAtIndex(int i, int val) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	
 }

@@ -17,8 +17,9 @@ public class MainClass
 		sc.nextLine();
         linkedList.addNodeAtIndex(30,val);
         linkedList.printList();
-        linkedList.pop();
-        System.out.print("After deleting ");
+        linkedList.popLast();
+        System.out.print("After deleting from last ");
         linkedList.printList();
+        System.out.println("Element 70 present inside List: " + linkedList.search(70));
     }
 }
