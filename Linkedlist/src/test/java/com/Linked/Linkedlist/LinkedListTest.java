@@ -99,4 +99,26 @@ public class LinkedListTest
     	linkedList.pop();
         assertNotEquals(56, linkedList.returnFirst());
     }
+    
+    @Test
+    public void deleteLastNodeTest_Correct(){
+    	linkedList.addNodeAtLast(56);
+    	linkedList.addNodeAtLast(70);
+//    	for adding element in between index taken as 1
+    	linkedList.addNodeAtIndex(30,1);
+    	linkedList.popLast();
+        assertEquals(2, linkedList.getSize());
+        assertEquals(56, linkedList.returnFirst());
+    }
+    
+    @Test
+    public void deleteLastNodeTest_InCorrect(){
+    	linkedList.addNodeAtLast(56);
+    	linkedList.addNodeAtLast(70);
+//    	for adding element in between index taken as 1
+    	linkedList.addNodeAtIndex(30,1);
+    	linkedList.popLast();
+        assertEquals(2, linkedList.getSize());
+        assertNotEquals(30, linkedList.returnFirst());
+    }
 }
