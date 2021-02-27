@@ -37,11 +37,7 @@ public class LinkedList{
 		this.head = head;
 	}
 
-	/**
-	 * @author Shubham, class defining an element of Linked List
-	 *
-	 * @param <T>, generic data type that the linked list stores
-	 */
+	
 	static class Node<T>{
 		private T data;
 		private Node next;
