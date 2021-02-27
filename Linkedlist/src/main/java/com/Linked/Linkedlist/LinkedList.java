@@ -155,4 +155,21 @@ public class LinkedList{
 		}
 		return (T)head.data;
 	}
+	/**
+	 * deletes the first nodeof the list
+	 */
+	public <T> void pop() {
+		if(head==null) {
+			System.out.println("The list is empty, no elements to remove");
+		}
+		else {
+			head = head.next;
+			size--;
+		}
+	}
+
+	public void addNodeAtIndex(int i, int val) {
+		// TODO Auto-generated method stub
+		
+	}
 }
