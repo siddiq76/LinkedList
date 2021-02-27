@@ -1,5 +1,8 @@
 package com.Linked.Linkedlist;
 
+import java.util.Scanner;
+
+
 public class LinkedList{
 	private int size;
 	private Node head;
@@ -9,12 +12,16 @@ public class LinkedList{
 		head = null;
 	}
 	
-	
+	/**
+	 * @return the size
+	 */
 	public int getSize() {
 		return size;
 	}
 
-	
+	/**
+	 * @param size the size to set
+	 */
 	public void setSize(int size) {
 		this.size = size;
 	}
@@ -26,7 +33,9 @@ public class LinkedList{
 		return head;
 	}
 
-	
+	/**
+	 * @param head the head to set
+	 */
 	public void setHead(Node head) {
 		this.head = head;
 	}
@@ -43,7 +52,9 @@ public class LinkedList{
 			return data;
 		}
 
-		
+		/**
+		 * @param data the data to set
+		 */
 		public void setData(T data) {
 			this.data = data;
 		}
@@ -55,7 +66,9 @@ public class LinkedList{
 			return next;
 		}
 
-		
+		/**
+		 * @param next the next to set
+		 */
 		public void setNext(Node next) {
 			this.next = next;
 		}
@@ -93,6 +106,29 @@ public class LinkedList{
 				t = t.next;
 			t.next = n;
 		}
+		size++;
+	}
+	
+	public <T> void addNodeAtIndex(T data) {
+		Node n = new Node(data);
+		Node t = head;
+		System.out.println("Enter the index in [0," + (size) +"] at which you want to add element");
+		Scanner sc = new Scanner(System.in);
+		int val = sc .nextInt();
+		sc.nextLine();
+		if(val == 0) {
+			addNodeAtFirst(data);
+			return;
+		}
+		for(int i=0; i < val-1  && t!=null; i++)
+			t = t.next;
+		if(t == null)
+		{
+			System.out.println("the list is not that long, value within the specified range not given");
+			return;
+		}
+		n.next = t.next;
+		t.next = n;
 		size++;
 	}
 	
